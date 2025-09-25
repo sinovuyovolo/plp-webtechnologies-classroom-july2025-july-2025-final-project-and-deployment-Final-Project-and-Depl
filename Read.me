@@ -1,0 +1,68 @@
+Project Blueprint: iKhuselo
+deployed link : https://i-khusela-app-html.vercel.app/
+
+​Vision: To create an intelligent, discreet, and accessible web application that empowers individuals facing gender-based violence in South Africa with immediate tools for safety, reporting, and support, while strengthening community and emergency response systems.
+​1. Problem Statement
+​How might we leverage technology to make communities safer, prevent gender-based violence (GBV), and strengthen emergency response and trust in safety systems?
+​2. Core Concept: "The Digital Shield"
+​iKhuselo (isiZulu/isiXhosa for "shield" or "protection") is a professional, multilingual safety web app disguised as a simple utility. Its primary goal is to provide a lifeline for individuals in distress through intelligent features, plausible deniability, and a user-centric, calming interface. It leverages Machine Learning through an AI assistant to provide scalable, immediate support.
+​3. Key Features & User Flow
+​A. Discreet Entry (Plausible Deniability)
+​Calculator Lock Screen:
+​On first visit, the user sees a fully functional, clean calculator.
+​The user sets a secret PIN (e.g., 1234*).
+​On subsequent visits, entering the correct PIN and a specific operator (e.g., =) grants access to the main application. Any other calculation works as normal.
+​Rationale: This allows the app to be hidden in plain sight, crucial if a perpetrator has access to the user's device.
+​B. Main Application UI/UX
+​Fully Responsive: Mobile-first design that adapts seamlessly to any screen size.
+​Professional & Calming Theme: Neutral color palettes (with light/dark mode) to avoid causing additional stress. Clean fonts and intuitive icons.
+​Top Navigation Bar:
+​South African Flag: A visual anchor for the app's context.
+​Language Selector: A dropdown with all 11 official languages. Clicking a language instantly changes all text on the app (using mock translations).
+​Theme Toggle: A button to switch between Light and Dark mode.
+​C. Main Dashboard ("Hello Snow!")
+​Personalized Greeting: Welcomes the user by their chosen name.
+​Wellness Check-in: A non-intrusive prompt: "How are you feeling today?" with simple, emoji-based options (e.g., 😊 Safe, 😟 Uneasy, 🆘 In Danger). This data can be used to track user wellbeing over time.
+​Main Emergency "SOS" Button: A large, easily accessible button.
+​Function (Demo): When pressed, it will trigger a confirmation modal ("Are you sure? This will contact emergency services."). Upon confirmation, it simulates an alert being sent, showing mock details: "Police & Ambulance Dispatched to [Your Saved Address]. ETA: 8 Minutes."
+​D. The AI Chatbot Assistant (Core ML Feature)
+​Persona: Empathetic, calm, and reassuring. The AI is designed to be a "first responder."
+​Multilingual: Functions in all 11 languages, powered by the Gemini API.
+​Chat Flow & Logic:
+​Triage: Begins with simple questions: "Are you in a safe place to talk?", "Are you in immediate danger?".
+​Guided Conversation: Asks questions to understand the situation (who, what, where, when).
+​De-escalation & Guidance: Provides actionable advice in real-time (e.g., "Focus on your breathing. Let's do it together," or "If possible, move towards a well-lit public area.").
+​Automated Action (If Critical):
+​If the user confirms a critical emergency, the chatbot states: "I am now alerting the authorities for you."
+​It automatically generates a concise, translated (to English) incident report from the conversation summary.
+​It displays the generated report to the user with a "Sending to SAPS..." status.
+​It provides a mock ETA for help and gives the user clear instructions on what to do while they wait.
+​4. Side Navigation Dashboards
+​Dashboard 1: Emergency Contacts
+​A pre-populated, static list of critical South African toll-free numbers.
+​SAPS (South African Police Service): 10111
+​GBV Command Centre: 0800 150 150
+​National Ambulance Service: 10177
+​Childline SA: 116
+​Each contact will have a "Call" button (for the demo, this will just show a "Calling..." message).
+​Dashboard 2: "On a Date" Safety Feature
+​A form for the user to input details about a meeting/date:
+​Person's Name, Contact Number, Meeting Location, Picture (mock upload).
+​A timer is set by the user (e.g., 2 hours).
+​If the user does not cancel the timer with their secret PIN before it expires, a mock "alert" is shown: "Safety timer expired. Alert with your location and date details has been sent to your emergency contacts."
+​Dashboard 3: Private Journal
+​A secure, simple text editor for journaling incidents or feelings.
+​Each entry is timestamped.
+​ML Integration: Sentiment analysis can run in the background on journal entries. If a strong negative trend is detected, the app can proactively ask the user if they are okay during their next wellness check-in.
+​Dashboard 4: Sign Language & Emoji Support
+​A small library of GIFs or images showing basic South African Sign Language (SASL) for "help," "danger," "police," etc.
+​An "emoji key" that defines how emojis can be used in the chatbot for non-verbal communication (e.g., 🚓 = "I need the police," 🏥 = "I need medical help").
+​Dashboard 5: Personal Information
+​A secure form where the user can pre-fill their details:
+​Full Name, Age, Address, Known Allergies, Blood Type, Emergency Contacts.
+​Rationale: This data is used to auto-populate the emergency report generated by the AI Chatbot, saving critical time.
+​5. Machine Learning Integration Points
+​Natural Language Processing (NLP): The Gemini API will power the chatbot's ability to understand and respond in 11 languages, recognize intent, and extract key information (entities like location, names).
+​Automated Reporting: The chatbot will use the generative model's summary capabilities to condense the conversation into a structured police report.
+​Sentiment Analysis: User mood (from check-ins) and journal entries can be analyzed to identify patterns of distress and trigger proactive, gentle interventions from the app.
+​Criticality Assessment: The chatbot can be trained (or prompted with specific logic) to classify the severity of a situation based on keywords and user responses to trigger the automated SOS actions.
